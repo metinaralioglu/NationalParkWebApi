@@ -1,11 +1,10 @@
 ﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:53504",
-      "sslPort": 44380
+      "applicationUrl": "http://localhost:21132",
+      "sslPort": 44330
     }
   },
   "profiles": {
@@ -16,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ParkyAPI": {
+    "ParkyWeb": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
