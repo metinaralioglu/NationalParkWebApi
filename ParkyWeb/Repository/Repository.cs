@@ -42,7 +42,7 @@ namespace ParkyWeb.Repository
 
         public async Task<bool> DeleteAsync(string url, int Id)
         {
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
+            var request = new HttpRequestMessage(HttpMethod.Delete, url+Id);
 
             var client = _clientFactory.CreateClient();
             HttpResponseMessage response = await client.SendAsync(request);

@@ -89,9 +89,9 @@ namespace ParkyWeb.Controllers
             var status = await _npRepo.DeleteAsync(SD.NationalParkAPIPath, id);
             if (status)
             {
-                return Json(new { success=true, message="Delete Succesful" });
+                return Json(new { success= true, message="Delete Succesful" });
             }
-            return Json(new { success = true, message = "Delete Not Succesful" });
+            return Json(new { success = false, message = "Delete Not Succesful" });
         }
     }
 }

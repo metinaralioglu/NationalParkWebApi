@@ -87,7 +87,7 @@ namespace ParkyWeb.Controllers
             {
                 return Json(new { success = true, message = "Delete Succesful" });
             }
-            return Json(new { success = true, message = "Delete Not Succesful" });
+            return Json(new { success = false, message = "Delete Not Succesful" });
         }
     }
 }
