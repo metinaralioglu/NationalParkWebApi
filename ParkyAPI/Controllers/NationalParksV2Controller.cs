@@ -37,9 +37,9 @@ namespace ParkyAPI.Controllers
 
         public IActionResult GetNationalParks()
         {
-            var nationalParksList = _npRepo.GetNationalParks().FirstOrDefault();
+            var obj = _npRepo.GetNationalParks().FirstOrDefault();
 
-            return Ok(_mapper.Map<NationalParkDto>(nationalParksList));
+            return Ok(_mapper.Map<NationalParkDto>(obj));
 
         }
 

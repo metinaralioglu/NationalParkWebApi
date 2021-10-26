@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace ParkyAPI.Controllers
 {
-    [Route("api/Trails")]
-     //[Route("api/v{version:apiVersion}/nationalparks")]
+    //[Route("api/trails")]
+    [Route("api/v{version:apiVersion}/trails")]
     [ApiController]
     //[ApiExplorerSettings(GroupName = "ParkyOpenAPISpecTrails")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
