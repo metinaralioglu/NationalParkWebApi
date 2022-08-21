@@ -24,7 +24,7 @@ namespace ParkyAPI.Controllers
         }
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] User model)
+        public IActionResult Authenticate([FromBody] AuthenticationModel model)
         {
             var user = _userRepo.Authenticate(model.Username, model.Password);
             if (user==null)
@@ -33,5 +33,27 @@ namespace ParkyAPI.Controllers
             }
             return Ok(user);
         }
+
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public IActionResult Register([FromBody] AuthenticationModel model )
+        {
+            bool isUserNameUnique = _userRepo.IsUniqueUser(model.Username);
+
+            if (!isUserNameUnique)
+            {
+                return BadRequest(new { message = "Username already exists" });
+            }
+
+            var user = _userRepo.Register(model.Username, model.Password);
+            if (user == null)
+            {
+                return BadRequest(new { message = "Error while registering" });
+            }
+
+            return Ok();
+        }
+
+
     }
 }
